@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Father's Day Postcard Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Happy Father's Day</h1>
+            <p>Create a beautiful, personalized postcard for the best dad.</p>
+        </header>
+
+        <main class="app-layout">
+            <section class="controls-section glass-panel">
+                <h2>Customize Your Card</h2>
+                
+                <div class="input-group">
+                    <label for="imageUpload">Upload a Photo</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <div class="file-upload-design">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            <span id="fileName">Choose an image...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="taglineInput">Write a Tagline</label>
+                    <textarea id="taglineInput" rows="3" placeholder="e.g. To the world's greatest dad. I love you!"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label>Card Style</label>
+                    <div class="style-selector">
+                        <button class="style-btn" data-style="modern">Modern</button>
+                        <button class="style-btn" data-style="polaroid">Polaroid</button>
+                        <button class="style-btn" data-style="classic">Classic</button>
+                        <button class="style-btn active" data-style="gingham">Gingham</button>
+                    </div>
+                </div>
+
+                <div class="input-group" id="colorSelectorGroup">
+                    <label>Theme Color</label>
+                    <div class="color-selector">
+                        <button class="color-btn active" data-color="blue" style="background-color: #8cb1d1;"></button>
+                        <button class="color-btn" data-color="green" style="background-color: #91cca6;"></button>
+                        <button class="color-btn" data-color="red" style="background-color: #db8888;"></button>
+                        <button class="color-btn" data-color="yellow" style="background-color: #e6d17e;"></button>
+                    </div>
+                </div>
+
+                <button id="downloadBtn" class="primary-btn" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download Postcard
+                </button>
+            </section>
+
+            <section class="preview-section glass-panel">
+                <h2>Preview</h2>
+                <div class="canvas-container">
+                    <div class="placeholder-text" id="previewPlaceholder">
+                        Upload a photo to see your postcard here
+                    </div>
+                    <canvas id="postcardCanvas"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
