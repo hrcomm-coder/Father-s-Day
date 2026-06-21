@@ -530,6 +530,15 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
 downloadBtn.addEventListener('click', () => {
     if (!currentImage) return;
     
+    // Track the postcard creation event in Google Analytics
+    if (typeof gtag === 'function') {
+        gtag('event', 'create_postcard', {
+            'event_category': 'Engagement',
+            'card_style': currentStyle,
+            'card_color': currentColor
+        });
+    }
+
     // Create a temporary link
     const link = document.createElement('a');
     link.download = 'Fathers-Day-Postcard.png';
